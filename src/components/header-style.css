@@ -1,3 +1,9 @@
+header {
+    border-color: white;
+    border-style: solid; 
+    border-width: 1px; 
+}
+
 .headerLink {
     color: white;
     margin-bottom: 8px; 

@@ -4,7 +4,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import './dialog-style.css'
-import { colors } from "@mui/material";
 import './footer-style.css';
 const MyDialog = ({ open, onClose, title, children } : DialogProps) => {
     return (

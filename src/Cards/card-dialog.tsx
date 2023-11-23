@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
-import './card-style.css'; 
+import './card-style.css';
 
 interface CardDialogProps {
-  question: string;
-  answer: string;
-  open: boolean;
-  onClose: () => void;
+    domain: string;
+    question: string;
+    answer: string;
+    open: boolean;
+    onClose: () => void;
 }
 
-const CardDialog: React.FC<CardDialogProps> = ({ question, answer, open, onClose }) => {
+const CardDialog: React.FC<CardDialogProps> = ({ domain ,question, answer, open, onClose }) => {
     const [timer, setTimer] = useState(30);
     const [showAnswer, setShowAnswer] = useState(false);
 
-    let intervalId: NodeJS.Timeout;
+    const intervalId = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
-
         if (open && timer > 0) {
-            intervalId = setInterval(() => {
+            intervalId.current = setInterval(() => {
                 setTimer((prevTimer) => prevTimer - 1);
             }, 1000);
         } else if (timer === 0) {
             setShowAnswer(true);
-            clearInterval(intervalId);
+            if (intervalId.current) clearInterval(intervalId.current);
         }
 
-        return () => clearInterval(intervalId);
+        return () => {
+            if (intervalId.current) clearInterval(intervalId.current);
+        };
     }, [timer, open]);
-
     const handleClose = () => {
         setTimer(30);
         setShowAnswer(false);
@@ -40,25 +41,26 @@ const CardDialog: React.FC<CardDialogProps> = ({ question, answer, open, onClose
     };
 
     return (
-        <Dialog 
-          open={open} 
-          onClose={handleClose}
-          PaperProps={{
-            className: 'dialog-appear',
-            style: {
-              width: '250px', 
-              height: '350px', 
-              overflow: 'hidden',
-              borderRadius: '15px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }
-          }}
+        <Dialog
+            open={open}
+            onClose={handleClose}
+            PaperProps={{
+                className: 'dialog-appear',
+                style: {
+                    width: '250px',
+                    height: '350px',
+                    overflow: 'hidden',
+                    borderRadius: '15px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }
+            }}
         >
-            <DialogTitle >{question}</DialogTitle>
+            <DialogTitle >{domain}</DialogTitle>
             <DialogContent>
+            {question}  
                 {!showAnswer ? (
                     <h2 style={{ color: timer <= 10 ? 'red' : 'black' }}>{timer} sec</h2>
                 ) : (
@@ -66,67 +68,10 @@ const CardDialog: React.FC<CardDialogProps> = ({ question, answer, open, onClose
                 )}
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Fermer</Button>
+                <Button onClick={handleClose}>Close</Button>
             </DialogActions>
         </Dialog>
     );
 };
 
 export default CardDialog;
-
-// --------------------------------------------
-
-// import React, { useState, useEffect } from 'react';
-// import Dialog from '@mui/material/Dialog';
-// import DialogTitle from '@mui/material/DialogTitle';
-// import DialogContent from '@mui/material/DialogContent';
-// import DialogActions from '@mui/material/DialogActions';
-// import Button from '@mui/material/Button';
-// import './card-dialog-style.css';
-// import questionCard from '../assets/question.png';
-
-// interface CardDialogProps {
-//   question: string;
-//   answer: string;
-//   open: boolean;
-//   onClose: () => void;
-// }
-
-// const CardDialog: React.FC<CardDialogProps> = ({ question, answer, open, onClose }) => {
-//     const [isFlipped, setIsFlipped] = useState(false);
-
-//     useEffect(() => {
-//         if (open) {
-//             setIsFlipped(true);
-//         } else {
-//             setIsFlipped(false);
-//         }
-//     }, [open]);
-
-//     const handleClose = () => {
-//         onClose();
-//     };
-
-//     return (
-//         <Dialog open={open} onClose={handleClose} style={{ overflow: 'hidden' }}>
-//             <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
-//                 <div className="card-front" style={{ backgroundImage: `url(${questionCard})` }}>
-//                     <DialogTitle>{question}</DialogTitle>
-//                 </div>
-//                 <div className="card-back">
-//                     <DialogContent>
-//                         <p>{answer}</p>
-//                     </DialogContent>
-//                     <DialogActions>
-//                         <Button onClick={handleClose}>Fermer</Button>
-//                     </DialogActions>
-//                 </div>
-//             </div>
-//         </Dialog>
-//     );
-// };
-
-// export default CardDialog;
-
-// // --------------------------------------------
-

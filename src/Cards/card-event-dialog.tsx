@@ -31,12 +31,12 @@ const EventDialog: React.FC<EventDialogProps> = ({ eventText, open, onClose }) =
             }
           }}
         >
-            <DialogTitle>Événement</DialogTitle>
+            <DialogTitle>Event Card</DialogTitle>
             <DialogContent>
                 <p>{eventText}</p>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}>Fermer</Button>
+                <Button onClick={onClose}>Close</Button>
             </DialogActions>
         </Dialog>
     );

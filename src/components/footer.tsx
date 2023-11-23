@@ -3,7 +3,8 @@ import './footer-style.css';
 
 const Footer = () => {
     return (
-        <AppBar component="footer" position="static" sx={{ bgcolor: 'black'}}>
+  
+        <AppBar component="footer" position="static" sx={{ bgcolor: 'black', width: '100%'}}>
             <Toolbar>
                 <Box display="flex" justifyContent="space-between" width="100%">
                     <Box display="flex" flexDirection="row" alignItems="center">

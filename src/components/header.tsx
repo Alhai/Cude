@@ -8,18 +8,15 @@ import { Box, Button } from '@mui/material';
 
 const Header = () => {
     return (
-        <AppBar position="static" sx={{ bgcolor: 'black' }}>
+        <AppBar component="header" position="static"  sx={{ bgcolor: 'black' }}>
             <Toolbar>
                 <Typography variant="h6" color="inherit" display="flex" flexDirection="row" alignItems="center">
                     <Link to="/" className="headerLink" style={{ textDecoration: 'none', color: 'white' }}>
                         Cude Game
                     </Link>
-                    <Box marginLeft="1050px">
+                    <Box marginLeft="1200px">
                         <Link to="/">
                             <Button sx={{ fontFamily: 'League Spartan, sans-serif', color : 'white' }}>Homepage</Button>
-                        </Link>
-                        <Link to="/">
-                            <Button sx={{ fontFamily: 'League Spartan, sans-serif', color : 'white'  }}>Simplify Rules</Button>
                         </Link>
                     </Box>
                 </Typography>
