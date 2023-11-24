@@ -150,7 +150,7 @@ const Quickstart = () => {
                     </Box>
                     {currentEvent && (
                         <EventDialog
-                            
+                            domain= {currentEventDomain}
                             eventText={currentEvent.event}
                             open={isDialogOpen}
                             onClose={handleCloseModal} />

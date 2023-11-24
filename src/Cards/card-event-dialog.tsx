@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import './card-style.css'; 
 
 interface EventDialogProps {
+  domain : string;
   eventText: string;
   open: boolean;
   onClose: () => void;

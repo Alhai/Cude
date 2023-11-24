@@ -1,7 +1,6 @@
 import React from 'react';
 import questionCard from '../assets/question.png'
 import './card-style.css'
-import { grey } from '@mui/material/colors';
 interface CardProps {
   onClick: () => void;
 }
