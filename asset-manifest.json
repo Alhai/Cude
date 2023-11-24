@@ -1,19 +1,25 @@
 {
   "files": {
-    "main.css": "/Cude/static/css/main.368cd997.css",
-    "main.js": "/Cude/static/js/main.a1094b49.js",
+    "main.css": "/Cude/static/css/main.d4ffedcb.css",
+    "main.js": "/Cude/static/js/main.884e627d.js",
     "static/js/787.dab367c3.chunk.js": "/Cude/static/js/787.dab367c3.chunk.js",
     "static/media/event.png": "/Cude/static/media/event.b3c8d81d8e531efd7721.png",
     "static/media/question.png": "/Cude/static/media/question.f9bc2fa44f9b20c9afaa.png",
     "static/media/duel.png": "/Cude/static/media/duel.e7d70c4c9925bc073f12.png",
-    "static/media/logo-game.png": "/Cude/static/media/logo-game.a188750399a8bce14368.png",
+    "static/media/logo-game.png": "/Cude/static/media/logo-game.633ebf85bfc9a58daac4.png",
+    "static/media/objective-icon.png": "/Cude/static/media/objective-icon.1358deba01a0294e6385.png",
+    "static/media/course-icon.png": "/Cude/static/media/course-icon.c121b741a4c232d78a26.png",
+    "static/media/setup-icon.png": "/Cude/static/media/setup-icon.2e9abbad56bf9f1304cd.png",
+    "static/media/balancing-icon.png": "/Cude/static/media/balancing-icon.ec9eb1948a96c7594402.png",
+    "static/media/begin-icon.png": "/Cude/static/media/begin-icon.ad36e7defe534f609ea3.png",
+    "static/media/end-icon.png": "/Cude/static/media/end-icon.d27479cb4fd517e42d64.png",
     "index.html": "/Cude/index.html",
-    "main.368cd997.css.map": "/Cude/static/css/main.368cd997.css.map",
-    "main.a1094b49.js.map": "/Cude/static/js/main.a1094b49.js.map",
+    "main.d4ffedcb.css.map": "/Cude/static/css/main.d4ffedcb.css.map",
+    "main.884e627d.js.map": "/Cude/static/js/main.884e627d.js.map",
     "787.dab367c3.chunk.js.map": "/Cude/static/js/787.dab367c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.368cd997.css",
-    "static/js/main.a1094b49.js"
+    "static/css/main.d4ffedcb.css",
+    "static/js/main.884e627d.js"
   ]
 }
